@@ -4,14 +4,20 @@
  *
  * @format
  */
+const path = require('path');
+const watchFolders = [
+  //Relative path to packages directory
+  path.resolve(__dirname + '../../../components'),
+];
 
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
+        inlineRequires: false,
       },
     }),
   },
+  watchFolders,
 };
