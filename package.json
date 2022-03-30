@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "axios": "^0.26.1",
     "lerna": "^4.0.0"
   },
   "name": "footballer",
