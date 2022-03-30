@@ -26,7 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {myString} from '@footballer/components';
+import {myString} from '@footballer/common';
 
 const Section: React.FC<{
   title: string;
@@ -76,7 +76,7 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Text>{myString()}</Text>
-          <Section title="Step One" >
+          <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>

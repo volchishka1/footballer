@@ -1,4 +1,4 @@
-import { myString } from "@footballer/components";
+import { myString } from "@footballer/common";
 import React from "react";
 // @ts-ignore
 import logo from "./logo.svg";
