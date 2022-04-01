@@ -26,6 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+// import {usersAPI} from '@footballer/api';
 import {myString} from '@footballer/common';
 
 const Section: React.FC<{
@@ -43,6 +44,7 @@ const Section: React.FC<{
         ]}>
         {title}
       </Text>
+      {/*<Text>{usersAPI()}</Text>*/}
       <Text
         style={[
           styles.sectionDescription,
@@ -75,10 +77,8 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Text>{myString()}</Text>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            <Text style={styles.highlight}>{myString()}</Text>
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />

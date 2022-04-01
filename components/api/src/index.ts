@@ -1,14 +1,12 @@
 import axios from "axios";
 
-const {REACT_APP_BASE_URL, REACT_APP_APIKEY} = process.env;
 
-
-export const usersAPI = () => {
+export const usersAPI = (baseURL: string, apikey: string) => {
 
   const instance = axios.create({
-    baseURL: `${REACT_APP_BASE_URL}`,
+    baseURL: baseURL,
     headers: {
-      'x-apisports-key': `${REACT_APP_APIKEY}`,
+      'x-apisports-key': apikey,
     }
   });
 

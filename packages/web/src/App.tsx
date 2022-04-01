@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
     // eslint-disable-next-line no-console
-    console.log(usersAPI().getMatches);
+    console.log(usersAPI(`${process.env.REACT_APP_BASE_URL}`,`${process.env.REACT_APP_APIKEY}`).getMatches);
     return (
         <div className="App">
             <header className="App-header">

@@ -3286,7 +3286,7 @@
 
 "@types/react@*", "@types/react@^17.0.43":
   version "17.0.43"
-  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.43.tgz"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.43.tgz#4adc142887dd4a2601ce730bc56c3436fdb07a55"
   integrity sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==
   dependencies:
     "@types/prop-types" "*"
@@ -12069,6 +12069,13 @@ react-native-codegen@^0.0.8:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
+
+react-native-dotenv@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-3.3.1.tgz#8f399cf28ca77d860d8e7f7323e439fa60a8ca0b"
+  integrity sha512-gAKXout1XCwCqJ3QPGoQAF2eRzOHgOnwg3x19z+ssow8bDIksJeKBqvoHDyGziVilAIP1J0bEC9Jf+VF8nFang==
+  dependencies:
+    dotenv "^10.0.0"
 
 react-native@0.67.4:
   version "0.67.4"
