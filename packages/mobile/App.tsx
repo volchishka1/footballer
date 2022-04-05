@@ -67,8 +67,7 @@ const App = () => {
           }}>
           <Section title="Step One">
             <Text style={styles.highlight}>{myString()}</Text>
-            <Text
-              style={styles.highlight}>{`${Config.REACT_APP_BASE_URL}`}</Text>
+            <Text style={styles.highlight}>`${Config.REACT_APP_BASE_URL}`</Text>
           </Section>
           <LearnMoreLinks />
         </View>
