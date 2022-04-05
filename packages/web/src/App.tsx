@@ -1,4 +1,4 @@
-import {decrement, increment} from "@footballer/redux/src/toolkitReducer";
+import {decrement, increment} from "@footballer/redux/src/toolkitSlice";
 import {usersAPI} from "@footballer/api";
 import {myString} from "@footballer/common";
 // @ts-ignore
