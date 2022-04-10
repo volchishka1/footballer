@@ -6,13 +6,13 @@ import React from "react";
 // @ts-ignore
 import logo from "./logo.svg";
 import "./App.css";
-import {useDispatch, useSelector} from "react-redux";
+import {useAppDispatch, useAppSelector} from "@footballer/redux/src/hooks";
 
 
 function App() {
     // @ts-ignore
-    const count = useSelector(state => state.toolkit.count);
-    const dispatch = useDispatch();
+    const count = useAppSelector(state => state.toolkit.count);
+    const dispatch = useAppDispatch();
 
     // eslint-disable-next-line no-console
     console.log(usersAPI(`${process.env.REACT_APP_BASE_URL}`, `${process.env.REACT_APP_APIKEY}`).getMatches);

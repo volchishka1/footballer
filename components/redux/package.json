@@ -2,5 +2,9 @@
   "name": "@footballer/redux",
   "version": "1.0.0",
   "main": "src/index.ts",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "react-redux": "^7.2.8"
+  }
 }

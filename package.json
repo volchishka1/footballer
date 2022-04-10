@@ -1,11 +1,6 @@
 {
   "dependencies": {
-    "@craco/craco": "^6.4.3",
-    "@reduxjs/toolkit": "^1.8.1",
-    "axios": "^0.26.1",
-    "dotenv": "^16.0.0",
-    "env-cmd": "^10.1.0",
-    "lerna": "^4.0.0"
+    "eslint-plugin-import": "^2.25.4"
   },
   "name": "footballer",
   "private": true,
@@ -14,17 +9,16 @@
     "packages": [
       "packages/**",
       "components/**"
-    ],
-    "nohoist": [
-      "**/react-native",
-      "**/react-native/**",
-      "**/react-native-config"
     ]
   },
   "scripts": {
-    "bootstrap": "npx lerna clean --yes && npx rimraf node_modules && npx lerna bootstrap",
-    "startweb": "lerna run --scope @footballer/web start",
-    "startmobileserv": "lerna run --scope @footballer/mobile start",
-    "startapp": "lerna run --scope @footballer/mobile android"
+    "bootstrap": "npx lerna clean --yes && rm -rf node_modules && npx lerna bootstrap",
+    "mobile-open-android-studio": "npx lerna run --scope @footballer/mobile --stream open-android-studio",
+    "mobile-open-xcode": "npx lerna run --scope @footballer/mobile --stream open-xcode",
+    "mobile-start-android": "npx lerna run --scope @footballer/mobile --stream android",
+    "mobile-start-ios": "npx lerna run --scope @footballer/mobile --stream ios",
+    "mobile-start-ios-small": "npx lerna run --scope @footballer/mobile --stream ios-small",
+    "mobile-start-server": "npx lerna run --scope @footballer/mobile --stream start",
+    "web-start": "npx lerna run --scope @footballer/web --stream start"
   }
 }
