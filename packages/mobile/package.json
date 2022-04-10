@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "android": "npx react-native run-android --verbose",
+    "install-pods": "npx pod-install",
+    "ios": "npx react-native run-ios --verbose",
+    "ios-small": "npx react-native run-ios --configuration Debug --simulator='iPhone SE (3rd generation)' --verbose",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "open-android-studio": "open -a /Applications/Android\\ Studio.app android",
+    "open-xcode": "xed -b ios",
+    "postinstall": "yarn run install-pods",
+    "start": "npx react-native start --verbose",
+    "test": "jest"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -18,6 +23,7 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@footballer/common": "1.0.0",
+    "@footballer/redux": "1.0.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.66.15",
@@ -28,6 +34,7 @@
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "react-native-monorepo-tools": "^1.1.4",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
   },

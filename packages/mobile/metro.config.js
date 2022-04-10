@@ -1,18 +1,26 @@
-const path = require('path');
-const watchFolders = [
-  //Relative path to packages directory
-  // eslint-disable-next-line no-path-concat
-  path.resolve(__dirname + '../../../components'),
-];
+const {
+  getMetroAndroidAssetsResolutionFix,
+  getMetroTools,
+} = require('react-native-monorepo-tools');
+
+const {extraNodeModules, watchFolders} = getMetroTools();
+
+const androidAssetsResolutionFix = getMetroAndroidAssetsResolutionFix();
 
 module.exports = {
+  resolver: {extraNodeModules},
+  server: {
+    enhanceMiddleware: middleware => {
+      return androidAssetsResolutionFix.applyMiddleware(middleware);
+    },
+  },
   transformer: {
-    getTransformOptions: async () => ({
-      transform: {
-        experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
+    getTransformOptions: async () => {
+      return {
+        transform: {experimentalImportSupport: false, inlineRequires: true},
+      };
+    },
+    publicPath: androidAssetsResolutionFix.publicPath,
   },
   watchFolders,
 };
