@@ -4,7 +4,9 @@
   "main": "src/index.ts",
   "private": true,
   "dependencies": {
+    "@footballer/api": "1.0.0",
     "@reduxjs/toolkit": "^1.8.1",
-    "react-redux": "^7.2.8"
+    "react-redux": "^7.2.8",
+    "redux-saga": "^1.1.3"
   }
 }

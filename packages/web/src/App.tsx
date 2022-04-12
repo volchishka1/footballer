@@ -1,4 +1,4 @@
-import {decrement, increment} from "@footballer/redux/src/toolkitSlice";
+import {decrement, increment, getCountriesFetch, AppRootStateType} from "@footballer/redux";
 import {usersAPI} from "@footballer/api";
 import {myString} from "@footballer/common";
 // @ts-ignore
@@ -10,19 +10,36 @@ import {useAppDispatch, useAppSelector} from "@footballer/redux/src/hooks";
 
 
 function App() {
-    // @ts-ignore
-    const count = useAppSelector(state => state.toolkit.count);
+    const count = useAppSelector((state: AppRootStateType) => state.toolkit.count);
+    const countries = useAppSelector((state: AppRootStateType) => state.toolkit.countries);
     const dispatch = useAppDispatch();
+    const data = JSON.stringify(countries);
+    const dataSlice = data.slice(0, 102);
 
-    // eslint-disable-next-line no-console
-    console.log(usersAPI(`${process.env.REACT_APP_BASE_URL}`, `${process.env.REACT_APP_APIKEY}`).getMatches);
+    const getIncrement = () => {
+        dispatch(increment());
+    };
+
+    const getDecrement = () => {
+        dispatch(decrement());
+    };
+
+    const getAddCountriesFetch = () => {
+        dispatch(getCountriesFetch());
+    }
+
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Счетчик {count}</h1>
+                <div>
+                    {dataSlice}
+                </div>
+                <button onClick={getAddCountriesFetch}>Получить страны</button>
                 <img src={logo} className="App-logo" alt="logo"/>
-                <button onClick={() => dispatch(increment())}>Инкремент</button>
-                <button onClick={() => dispatch(decrement())}>Декремент</button>
+                <h2>Счетчик {count}</h2>
+                <button onClick={getIncrement}>Инкремент</button>
+                <button onClick={getDecrement}>Декремент</button>
+                <br/>
                 {myString()}
             </header>
         </div>

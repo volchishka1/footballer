@@ -10,7 +10,7 @@ export const usersAPI = (baseURL: string, apikey: string) => {
     }
   });
 
-  const getMatches = instance.get(`/timezone`)
+  const getMatches = () => instance.get(`/timezone`)
 
   return {getMatches}
 }
