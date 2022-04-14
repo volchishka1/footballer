@@ -1,4 +1,4 @@
-import {decrement, increment, getCountriesFetch, AppRootStateType} from "@footballer/redux";
+import {decrement, increment, getCountriesFetch} from "@footballer/redux";
 import {usersAPI} from "@footballer/api";
 import {myString} from "@footballer/common";
 // @ts-ignore
@@ -9,9 +9,11 @@ import "./App.css";
 import {useAppDispatch, useAppSelector} from "@footballer/redux/src/hooks";
 
 
+
+
 function App() {
-    const count = useAppSelector((state: AppRootStateType) => state.toolkit.count);
-    const countries = useAppSelector((state: AppRootStateType) => state.toolkit.countries);
+    const count = useAppSelector((state) => state.toolkit.count);
+    const countries = useAppSelector((state) => state.toolkit.countries);
     const dispatch = useAppDispatch();
     const data = JSON.stringify(countries);
     const dataSlice = data.slice(0, 102);
@@ -31,7 +33,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
+                <div className="data">
                     {dataSlice}
                 </div>
                 <button onClick={getAddCountriesFetch}>Получить страны</button>
