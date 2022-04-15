@@ -2,7 +2,6 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import toolkitSlice from "./toolkitSlice";
 import createSagaMiddleware from "redux-saga";
 import {RootSaga} from "./sagas";
-import storage from "redux-persist/lib/storage";
 import {
     persistStore,
     persistReducer,
@@ -13,11 +12,12 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-// @ts-ignore
+
+export type AppRootStateType = ReturnType<typeof rootReducer>
 
 export const rootReducer = combineReducers({toolkit: toolkitSlice});
 
-export const createGlobalStore = (persistStorage) => {
+export const createGlobalStore = (persistStorage: any) => {
     const sagaMiddleware = createSagaMiddleware();
     const persistConfig = {key: 'root', storage: persistStorage};
     const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -36,4 +36,5 @@ export const createGlobalStore = (persistStorage) => {
     const persistor = persistStore(store);
     return {store, persistor};
 };
+
 
